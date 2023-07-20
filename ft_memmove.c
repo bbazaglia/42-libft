@@ -6,13 +6,9 @@
 /*   By: bbazagli <bbazagli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/19 09:35:25 by bbazagli          #+#    #+#             */
-/*   Updated: 2023/07/19 14:41:58 by bbazagli         ###   ########.fr       */
+/*   Updated: 2023/07/20 12:03:13 by bbazagli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "libft.h"
-
-// DELETE COMMENTS BEFORE SUBMITTING!
 
 /* copies n bytes to temporary buffer and then to dest
 the function returns a pointer to dest
@@ -34,6 +30,8 @@ Now swap src and dst:
             [---- src ---]
 In that case it's only safe to copy "front to back" as copying "back to front" would destroy src near its front already when copying the first byte.
 */
+
+#include "libft.h"
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {

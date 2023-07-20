@@ -6,11 +6,9 @@
 /*   By: bbazagli <bbazagli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/18 12:14:32 by bbazagli          #+#    #+#             */
-/*   Updated: 2023/07/19 09:33:01 by bbazagli         ###   ########.fr       */
+/*   Updated: 2023/07/20 12:03:28 by bbazagli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-// DELETE COMMENTS BEFORE SUBMITTING!
 
 /* fill a block of memory with a specified value c,
 	for a given number of bytes n
