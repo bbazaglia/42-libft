@@ -6,13 +6,13 @@
 /*   By: bbazagli <bbazagli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/20 10:54:01 by bbazagli          #+#    #+#             */
-/*   Updated: 2023/07/20 11:34:34 by bbazagli         ###   ########.fr       */
+/*   Updated: 2023/07/21 16:40:50 by bbazagli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/* locates the first occurrence of the s1ing s2 in the s1ing s1,
+/* locates the first occurrence of the string s2 in the string s1,
 	where not more than len characters are searched.
-if s2 is an empty s1ing, s1 is returned
+if s2 is an empty string, s1 is returned
 if s2 occurs nowhere in s1, NULL is returned
 if s2 is found, a pointer to the first character of its occurrence is returned
 */
