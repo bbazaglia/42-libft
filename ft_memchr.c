@@ -6,7 +6,7 @@
 /*   By: bbazagli <bbazagli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/19 11:32:32 by bbazagli          #+#    #+#             */
-/*   Updated: 2023/07/19 13:57:18 by bbazagli         ###   ########.fr       */
+/*   Updated: 2023/07/21 16:55:02 by bbazagli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,4 +32,11 @@ void	*ft_memchr(const void *s, int c, size_t n)
 		i++;
 	}
 	return (NULL);
+}
+
+#include <stdio.h>
+
+int main()
+{
+	
 }

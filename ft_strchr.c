@@ -6,7 +6,7 @@
 /*   By: bbazagli <bbazagli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/20 08:55:48 by bbazagli          #+#    #+#             */
-/*   Updated: 2023/07/20 09:07:59 by bbazagli         ###   ########.fr       */
+/*   Updated: 2023/07/21 16:55:25 by bbazagli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 char	*ft_strchr(const char *s, int c)
 {
 	unsigned char *ptr;
+	
 	ptr = (unsigned char *)s;
 	while (*ptr != '\0')
 	{
@@ -26,4 +27,11 @@ char	*ft_strchr(const char *s, int c)
 		ptr++;
 	}
 	return (NULL);
+}
+
+#include <stdio.h>
+
+int main()
+{
+	
 }
