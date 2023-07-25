@@ -6,7 +6,7 @@
 /*   By: bbazagli <bbazagli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/20 10:54:01 by bbazagli          #+#    #+#             */
-/*   Updated: 2023/07/21 16:40:50 by bbazagli         ###   ########.fr       */
+/*   Updated: 2023/07/25 13:40:38 by bbazagli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ char	*ft_strnstr(const char *s1, const char *s2, size_t len)
     size_t j;
 
 	if (*s2 == '\0')
-		return ((unsigned char *)s1);
+		return ((char *)s1);
     i = 0;        
 	while (i < len && s1[i])
 	{
@@ -38,7 +38,7 @@ char	*ft_strnstr(const char *s1, const char *s2, size_t len)
                 j++;
         }
         if (s2[j] == '\0')
-            return ((unsigned char *)&s1[i]);
+            return ((char *)&s1[i]);
         i++;
 	}
 	return (NULL);
