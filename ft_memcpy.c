@@ -6,7 +6,7 @@
 /*   By: bbazagli <bbazagli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/18 13:23:03 by bbazagli          #+#    #+#             */
-/*   Updated: 2023/07/20 12:03:23 by bbazagli         ###   ########.fr       */
+/*   Updated: 2023/07/25 13:38:13 by bbazagli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,12 +39,12 @@ printf("%s\n", dest_ptr) - prints string
 printf("%p\n", dest_ptr) - prints address
 */
 
-int	main(void)
-{
-	char src[] = "copy this";
-	char dest[100];
-	char *dest_ptr = memcpy(dest, src, strlen(src) + 1);
-	char *dest_ptr2 = ft_memcpy(dest, src, strlen(src) + 1);
-	printf("%p\n", dest_ptr);
-	printf("%s\n", dest_ptr2);
-}
+// int	main(void)
+// {
+// 	char src[] = "copy this";
+// 	char dest[100];
+// 	char *dest_ptr = memcpy(dest, src, strlen(src) + 1);
+// 	char *dest_ptr2 = ft_memcpy(dest, src, strlen(src) + 1);
+// 	printf("%p\n", dest_ptr);
+// 	printf("%s\n", dest_ptr2);
+// }

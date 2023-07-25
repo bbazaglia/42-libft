@@ -6,7 +6,7 @@
 /*   By: bbazagli <bbazagli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/21 12:29:53 by bbazagli          #+#    #+#             */
-/*   Updated: 2023/07/21 15:57:40 by bbazagli         ###   ########.fr       */
+/*   Updated: 2023/07/25 13:36:20 by bbazagli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,9 +40,9 @@ char	*ft_strtrim(char const *s1, char const *set)
 	start = 0;
 	end = s1len;
 
-	while (strchr(set, s1[start]) && start < end)
+	while (ft_strchr(set, s1[start]) && start < end)
 		start++;
-	while (strchr(set, s1[end - 1]) && end > start)
+	while (ft_strchr(set, s1[end - 1]) && end > start)
 		end--;
 	trimlen = end - start;
 	trimstr = (char *)malloc(trimlen + 1);

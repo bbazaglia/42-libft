@@ -6,23 +6,20 @@
 /*   By: bbazagli <bbazagli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/21 09:18:10 by bbazagli          #+#    #+#             */
-/*   Updated: 2023/07/21 10:57:52 by bbazagli         ###   ########.fr       */
+/*   Updated: 2023/07/25 13:35:11 by bbazagli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/* returns the substring of the string at the start position with the given length
-- or smaller, if the length of the original string is less than start + length,
-	or length is bigger than the max string length
-returns NULL if the allocation fails 
+/*   
 */
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	unsigned char	*subs;
-	size_t			slen;
-	size_t			i;
+	char	*subs;
+	size_t	slen;
+	size_t	i;
 
 	slen = ft_strlen(s);
 	if (slen < start + len)

@@ -6,7 +6,7 @@
 /*   By: bbazagli <bbazagli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/19 09:35:25 by bbazagli          #+#    #+#             */
-/*   Updated: 2023/07/20 12:03:13 by bbazagli         ###   ########.fr       */
+/*   Updated: 2023/07/25 13:38:49 by bbazagli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,9 +41,9 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 		return (NULL);
 	if (dest < src)
 	{
+		i = 0;
 		while (i < n)
 		{
-			i = 0;
 			((unsigned char *)dest)[i] = ((unsigned char *)src)[i];
 			i++;
 		}
