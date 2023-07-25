@@ -6,7 +6,7 @@
 /*   By: bbazagli <bbazagli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/20 11:47:02 by bbazagli          #+#    #+#             */
-/*   Updated: 2023/07/20 12:37:38 by bbazagli         ###   ########.fr       */
+/*   Updated: 2023/07/25 13:47:49 by bbazagli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,9 @@ int		ft_atoi(const char *nptr)
 
     sign = 1;
     sum = 0;
-    while (*nptr >= '\t' && *nptr <= '\r' || *nptr == ' ')
+    while ((*nptr >= '\t' && *nptr <= '\r') || *nptr == ' ')
         nptr++;
-    if (*nptr == '-' || *nptr == '-')
+    if (*nptr == '-' || *nptr == '+')
     {
         if (*nptr == '-')
             sign *= -1;
