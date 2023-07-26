@@ -6,7 +6,7 @@
 /*   By: bbazagli <bbazagli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/19 09:35:25 by bbazagli          #+#    #+#             */
-/*   Updated: 2023/07/25 13:38:49 by bbazagli         ###   ########.fr       */
+/*   Updated: 2023/07/25 15:13:53 by bbazagli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 {
 	size_t	i;
 
-	if (dest == NULL)
+	if (dest == NULL && src == NULL)
 		return (NULL);
 	if (dest < src)
 	{

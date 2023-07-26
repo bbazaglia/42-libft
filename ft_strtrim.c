@@ -6,7 +6,7 @@
 /*   By: bbazagli <bbazagli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/21 12:29:53 by bbazagli          #+#    #+#             */
-/*   Updated: 2023/07/25 13:36:20 by bbazagli         ###   ########.fr       */
+/*   Updated: 2023/07/26 09:32:24 by bbazagli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,21 +25,18 @@ once it finds a char that is not in set, the loop stops, and end will hold the i
 copy the trimmed characters from s1 to trimstr
 */ 
 
+#include "libft.h"
+
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	size_t i;
-	size_t s1len;
-	size_t setlen;
-	size_t start;
-	size_t end;
-	size_t trimlen;
-	char *trimstr;
+	size_t	i;
+	size_t	start;
+	size_t	end;
+	size_t	trimlen;
+	char	*trimstr;
 
-	s1len = ft_strlen(s1);
-	setlen = ft_strlen(set);
 	start = 0;
-	end = s1len;
-
+	end = ft_strlen(s1);
 	while (ft_strchr(set, s1[start]) && start < end)
 		start++;
 	while (ft_strchr(set, s1[end - 1]) && end > start)

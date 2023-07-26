@@ -6,15 +6,15 @@
 /*   By: bbazagli <bbazagli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/18 12:03:56 by bbazagli          #+#    #+#             */
-/*   Updated: 2023/07/20 12:02:31 by bbazagli         ###   ########.fr       */
+/*   Updated: 2023/07/25 14:24:24 by bbazagli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_isprint(int c)
+int	ft_isprint(int c)
 {
-    if (!(c >= 0 && c <= 32))
-        return 1;
-    return 0;
+	if ((c >= 32 && c < 127))
+		return (1);
+	return (0);
 }

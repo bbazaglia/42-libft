@@ -6,7 +6,7 @@
 /*   By: bbazagli <bbazagli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/19 11:06:39 by bbazagli          #+#    #+#             */
-/*   Updated: 2023/07/19 11:30:31 by bbazagli         ###   ########.fr       */
+/*   Updated: 2023/07/25 14:26:34 by bbazagli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,9 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	{
 		if (*ptr1 != *ptr2)
 			return ((int)(*ptr1) - (int)(*ptr2));
-        
-        ptr1++;
-        ptr2++;
-        n--;
+		ptr1++;
+		ptr2++;
+		n--;
 	}
 	return (0);
 }

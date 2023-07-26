@@ -6,7 +6,7 @@
 /*   By: bbazagli <bbazagli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/18 12:14:32 by bbazagli          #+#    #+#             */
-/*   Updated: 2023/07/20 15:35:59 by bbazagli         ###   ########.fr       */
+/*   Updated: 2023/07/25 15:15:21 by bbazagli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,6 @@ void	*ft_memset(void *str, int c, size_t n)
 	return (str);
 }
 
-
 // #include <stdio.h>
 
 // int main()
@@ -54,7 +53,7 @@ void	*ft_memset(void *str, int c, size_t n)
 // 	src[2] = 'a';
 // 	src[3] = 'a';
 // 	ft_memset(&src[3], 'b', 3);
-// 	return printf("%s\n", src);
+// 	return (printf("%s\n", src));
 
 // test 2
 // 	char src[] = "aaaaaaa";
@@ -64,5 +63,5 @@ void	*ft_memset(void *str, int c, size_t n)
 // 	{
 // 		printf("%c ", src[i]);
 // 		i++;
-// 	}	
+// 	}
 // }
