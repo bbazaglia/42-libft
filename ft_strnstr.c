@@ -6,7 +6,7 @@
 /*   By: bbazagli <bbazagli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/20 10:54:01 by bbazagli          #+#    #+#             */
-/*   Updated: 2023/07/25 13:40:38 by bbazagli         ###   ########.fr       */
+/*   Updated: 2023/07/26 10:12:11 by bbazagli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,25 @@
 if s2 is an empty string, s1 is returned
 if s2 occurs nowhere in s1, NULL is returned
 if s2 is found, a pointer to the first character of its occurrence is returned
+
+example: 
+haystack (s1): C C C B I A
+			   0 1 2 3 4 5
+needle (s2): B I A 
+			 0 1 2
+			 
+'B' at s1 is 3
+'B' at s2 is 0
+
+'I' at s1 is 3 + 1
+'I' at s2 is 1
+
+'A' at s1 is 3 + 2 
+'A' at s2 is 2
+
+when s2 is found, s1 equals to s2 + s1
 */
 
-// i < len should be checked before s1[i], to prevent any out-of-bounds memory access
 
 #include "libft.h"
 
@@ -32,13 +48,12 @@ char	*ft_strnstr(const char *s1, const char *s2, size_t len)
 	while (i < len && s1[i])
 	{
         j = 0;
-		if (s1[i] == s2[j])
-		{
-			while (s2[j] && s1[i + j] == s2[j])
-                j++;
-        }
-        if (s2[j] == '\0')
-            return ((char *)&s1[i]);
+		while ((i + j) < len && s1[i + j] == s2[j])
+        {
+		        j++;
+        		if (s2[j] == '\0')
+            		return ((char *)&s1[i]);
+		}
         i++;
 	}
 	return (NULL);
