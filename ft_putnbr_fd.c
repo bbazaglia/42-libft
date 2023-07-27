@@ -6,7 +6,7 @@
 /*   By: bbazagli <bbazagli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/27 09:59:46 by bbazagli          #+#    #+#             */
-/*   Updated: 2023/07/27 10:23:24 by bbazagli         ###   ########.fr       */
+/*   Updated: 2023/07/27 13:21:48 by bbazagli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void	ft_putnbr_fd(int n, int fd)
 	{
 		number[i] = (num % 10) + '0';
 		i++;
-		num = num / 10;
+		num /= 10;
 	}
 	while (--i >= 0)
 	{

@@ -6,7 +6,7 @@
 /*   By: bbazagli <bbazagli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/27 09:42:27 by bbazagli          #+#    #+#             */
-/*   Updated: 2023/07/27 09:50:34 by bbazagli         ###   ########.fr       */
+/*   Updated: 2023/07/27 13:26:05 by bbazagli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,11 @@ Return value: none.
 
 #include "libft.h"
 
-void ft_putstr_fd(char *s, int fd)
+void	ft_putstr_fd(char *s, int fd)
 {
-    while(*s)
-    {
-        write(fd, s, 1);
-        s++;
-    }
+	while (*s)
+	{
+		write(fd, s, 1);
+		s++;
+	}
 }

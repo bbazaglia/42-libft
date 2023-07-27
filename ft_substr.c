@@ -6,9 +6,14 @@
 /*   By: bbazagli <bbazagli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/21 09:18:10 by bbazagli          #+#    #+#             */
-/*   Updated: 2023/07/26 10:47:42 by bbazagli         ###   ########.fr       */
+/*   Updated: 2023/07/27 11:08:46 by bbazagli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/* It returns a substring (allocate space for it using malloc) from the string ’s’.
+The substring begins at index ’start’ of the string 's' and is of maximum size ’len’.
+So, len is how many chars I inted to copy.
+*/
 
 #include "libft.h"
 
