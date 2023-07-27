@@ -6,7 +6,7 @@
 /*   By: bbazagli <bbazagli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/21 12:29:53 by bbazagli          #+#    #+#             */
-/*   Updated: 2023/07/26 09:32:24 by bbazagli         ###   ########.fr       */
+/*   Updated: 2023/07/27 09:08:29 by bbazagli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ increment the start index while the char at that position exists in set
 once it finds a char that is not in set, the loop stops, and start will hold the index from which the trimming needs to begin
 - second loop: 
 find the ending position from which the trimming needs to end
-decrement the ebd index while the char at that position exists in set 
+decrement the end index while the char at that position exists in set 
 once it finds a char that is not in set, the loop stops, and end will hold the index from which the trimming needs to stop
 - third loop:
 copy the trimmed characters from s1 to trimstr
