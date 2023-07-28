@@ -38,8 +38,12 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	return (new);
 }
 
-/* the iteration could also be done using more lines of code:
-    unsigned int i = 0;
+/* Why i = - 1 ? 
+If 'i' were initialized to 0, then the first character of s1 would be copied at index 1 of the new string, and the concatenation would start from the second character of the new string.
+By initializing i to -1 and then using the pre-increment ++i in the loop condition, the first character of s1 will be copied to new[0], the second character to new[1], and so on.
+
+the iteration could also be done using more lines of code:
+	unsigned int i = 0;
     unsigned int j = 0;
     while (s1[j])
 	{
