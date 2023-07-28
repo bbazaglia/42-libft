@@ -6,7 +6,7 @@
 /*   By: bbazagli <bbazagli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/24 12:06:06 by bbazagli          #+#    #+#             */
-/*   Updated: 2023/07/27 15:28:51 by bbazagli         ###   ########.fr       */
+/*   Updated: 2023/07/28 09:26:55 by bbazagli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,21 +24,23 @@ int	ft_count_words(char const *s, char c)
 
 	i = 0;
 	count = 0;
+	// iterates over the string until it reaches the null terminator
 	while (s[i])
 	{
-		// the first char of a word won't be a delimiter  
+		/* if the current character is not a delimiter `c`, it means it is part of a word
+    	increment `count` to indicate that we found a word */
 		if (s[i] != c)
 		{
 			count++;
-			// iterate through the string while it's a word (as we only want to find the start of a word)
+			// advance the index `i` until we reach the end of the word
 			while (s[i] && s[i] != c)
 				i++;
 		}
-		// iterate again to find the next word
+		// move on to the next character in the string to find the next word
 		else 
 			i++;
 	}
-	// count equals to how many times the first letter of a word was found (number of words itself)
+	// return the total count of words
 	return (count);
 }
 
@@ -68,30 +70,42 @@ void	*ft_free_split(char **arr)
 /* allocate memory for each word and populate the words array*/
 char	**ft_write_words(char **words, char const *s, char c)
 {
+	// keep track of the length of each word
 	size_t	len;
+	// keep track of the index of the words array 
 	size_t	i;
 
 	i = 0;
+	// iterates over the string 's' until it reaches the null terminator
 	while (*s)
 	{
 		len = 0;
+		// counts the number of characters in s until it encounters the delimiter c or the null terminator (end of 's')
 		while (s[len] != c && s[len])
 			len++;
+		// allocate memory for the current word
 		words[i] = (char *)malloc(len * sizeof(char) + 1);
+		// check if the memory allocation was successful
 		if (words[i] == NULL)
 			return (ft_free_split(words));
+		// add a null terminator at the end of the current word 
 		words[i][len] = '\0';
+		// copy the charactersCopy the characters of the current word from the string 's' to the memory block allocated for the word, in reverse order from the input string s to the memory block allocated for the word, in reverse order
 		while (len > 0)
 		{
 			words[i][len - 1] = s[len - 1];
 			len--;
 		}
+		// move the pointer to the beginning of the next word in the string, skipping the delimiter c
 		while (*s != c && *s)
 			s++;
+		// skip over any consecutive delimiters that might be present in the string
 		while (*s == c && *s)
 			s++;
+		// move to the next index in the words array to store the next word
 		i++;
 	}
+	// return the words array, now containing the individual words as separate strings
 	return (words);
 }
 
@@ -101,12 +115,18 @@ char	**ft_split(char const *s, char c)
 	size_t	num_words;
 
 	num_words = ft_count_words(s, c);
+	// allocate memory for the 'arr' array
 	arr = (char **)malloc(sizeof(char *) * (num_words + 1));
+	// check if the memory allocation was successful
 	if (arr == NULL)
 		return (NULL);
+	// skip any delimiters at the beginning of the string 
 	while (*s == c && *s)
 		s++;
+	// call function to split the string into individual words and populate the array with pointers to these words
 	arr = ft_write_words(arr, s, c);
+	// set the last element of the arr array to NULL
 	arr[num_words] = NULL;
+	// Note that '**words' handle the intermediate storage of individual words during word extraction, while '**arr' represents the final array of strings (words)
 	return (arr);
 }
