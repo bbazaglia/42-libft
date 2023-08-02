@@ -6,7 +6,7 @@
 /*   By: bbazagli <bbazagli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/20 13:31:51 by bbazagli          #+#    #+#             */
-/*   Updated: 2023/07/25 14:11:20 by bbazagli         ###   ########.fr       */
+/*   Updated: 2023/08/02 11:16:37 by bbazagli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,16 @@
 void	*ft_calloc(size_t nelem, size_t elsize)
 {
 	void	*ptr;
+	size_t	total_size;
 
-	ptr = malloc(nelem * elsize);
+	if (nelem == '\0' || elsize == '\0')
+        return (malloc(0));
+	total_size = nelem * elsize;
+	if ((total_size > 2147483647) || (total_size / elsize != nelem))
+		return (NULL);
+	ptr = malloc(total_size);
 	if (ptr == NULL)
 		return (NULL);
-	ft_memset(ptr, 0, nelem * elsize);
+	ft_memset(ptr, 0, total_size);
 	return (ptr);
 }
