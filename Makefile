@@ -6,7 +6,7 @@
 #    By: bbazagli <bbazagli@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/18 10:56:34 by bbazagli          #+#    #+#              #
-#    Updated: 2023/08/02 13:25:54 by bbazagli         ###   ########.fr        #
+#    Updated: 2023/08/02 16:23:13 by bbazagli         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -93,7 +93,7 @@ OBJ =  ft_putnbr_fd.o \
 	ft_strncmp.o
 
 OBJ_BONUS = ft_lstnew.o \
-	ft_lstadd_front.o
+	ft_lstadd_front.o \
 	ft_lstmap.o \
 	ft_lstiter.o \
 	ft_lstclear.o \
@@ -104,25 +104,21 @@ OBJ_BONUS = ft_lstnew.o \
 
 NAME = libft.a
 
-NAME_BONUS = libft_bonus.a
-
 all: $(NAME)
 
+bonus: 
+	gcc -Wall -Wextra -Werror -c $(SRC) $(SRC_BONUS)
+	ar rc $(NAME) $(OBJ) $(OBJ_BONUS)
+
 $(NAME): $(OBJ)
-	gcc -Wall -Wextra -Werror -c $(SRC)
+	gcc -Wall -Wextra -Werror -c $(SRC) 
 	ar rc $(NAME) $(OBJ)
-
-bonus: $(NAME_BONUS)
-
-$(NAME_BONUS): $(OBJ_BONUS)
-	gcc -Wall -Wextra -Werror -c $(SRC_BONUS)
-	ar rc $(NAME_BONUS) $(OBJ_BONUS)
 
 clean: 
 	rm -f $(OBJ) $(OBJ_BONUS)
 
 fclean: clean
-	rm -f $(NAME) $(NAME_BONUS) 
+	rm -f $(NAME) $(NAME) 
 
 re: fclean all
 
