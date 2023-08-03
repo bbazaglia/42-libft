@@ -6,7 +6,7 @@
 /*   By: bbazagli <bbazagli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/02 09:55:50 by bbazagli          #+#    #+#             */
-/*   Updated: 2023/08/02 16:35:55 by bbazagli         ###   ########.fr       */
+/*   Updated: 2023/08/03 16:31:01 by bbazagli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int ft_lstsize(t_list *lst)
         return (0);
         
     // while the next node is not null, increment the counter and move to the next node
-    while (lst != NULL)
+    while (lst->next != NULL)
     {
         lst = lst->next;
         i++;
