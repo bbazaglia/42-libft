@@ -6,7 +6,7 @@
 #    By: bbazagli <bbazagli@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/18 10:56:34 by bbazagli          #+#    #+#              #
-#    Updated: 2023/08/02 16:23:13 by bbazagli         ###   ########.fr        #
+#    Updated: 2023/08/03 16:26:20 by bbazagli         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -106,9 +106,13 @@ NAME = libft.a
 
 all: $(NAME)
 
+# bonus: 
+# 	gcc -Wall -Wextra -Werror -c $(SRC) $(SRC_BONUS)
+# 	ar rc $(NAME) $(OBJ) $(OBJ_BONUS)
+	
 bonus: 
-	gcc -Wall -Wextra -Werror -c $(SRC) $(SRC_BONUS)
-	ar rc $(NAME) $(OBJ) $(OBJ_BONUS)
+	gcc -Wall -Wextra -Werror -c $(SRC_BONUS)
+	ar rc $(NAME) $(OBJ_BONUS)
 
 $(NAME): $(OBJ)
 	gcc -Wall -Wextra -Werror -c $(SRC) 
