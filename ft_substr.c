@@ -6,34 +6,49 @@
 /*   By: bbazagli <bbazagli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/21 09:18:10 by bbazagli          #+#    #+#             */
-/*   Updated: 2023/08/04 11:16:14 by bbazagli         ###   ########.fr       */
+/*   Updated: 2023/08/04 16:04:34 by bbazagli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /* It returns a substring (allocate space for it using malloc) from the string ’s’.
 The substring begins at index ’start’ of the string 's' and is of maximum size ’len’.
-So, len is how many chars I inted to copy.
-*/
+So, len is how many chars I inted to copy. */
 
 #include "libft.h"
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
+	// pointer to the memory that will store the extracted substring
 	char	*subs;
-	size_t	slen;
+
+	// store the length of the source string 
+	size_t	slen = ft_strlen(s);
+
+	// index to iterate through the source string
 	size_t	i;
 
+	// check if the a is a valid string
 	if (!s)
 		return (NULL);
-	slen = ft_strlen(s);
+			
+	// if start is beyond the end of the string, return an empty string
 	if (start >= slen)
 		return (ft_strdup(""));
+		
+	/* if the substring go beyond the end of the source string, 
+	set len to the remaining length of the source string from the starting index */
 	if (slen < start + len)
 		len = slen - start;
+		
+	// allocate memory for the substring
 	subs = (char *)malloc(sizeof(char) * (len + 1));
+	// check if the allocation was successful
 	if (subs == NULL)
 		return (NULL);
+		
 	i = 0;
+	/* start is the fixed point where the copy for the substring starts, 
+	so i is used to effectively iterate through the source string */ 
 	while (s[start + i] && i < len)
 	{
 		subs[i] = s[start + i];
