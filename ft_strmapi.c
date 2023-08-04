@@ -6,7 +6,7 @@
 /*   By: bbazagli <bbazagli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 16:30:11 by bbazagli          #+#    #+#             */
-/*   Updated: 2023/07/27 09:23:22 by bbazagli         ###   ########.fr       */
+/*   Updated: 2023/08/04 15:43:29 by bbazagli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
     new[i] = '\0';
 	return (new);
 }
-
+	
 /* Note: the loop could also have been written from back to front
 len = ft_strlen(s);
 new[len] = '\0';
