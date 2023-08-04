@@ -6,17 +6,15 @@
 /*   By: bbazagli <bbazagli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/20 10:54:01 by bbazagli          #+#    #+#             */
-/*   Updated: 2023/07/27 11:24:02 by bbazagli         ###   ########.fr       */
+/*   Updated: 2023/08/04 15:51:19 by bbazagli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /* locates the first occurrence of the string s2 in the string s1,
 	where not more than len characters are searched.
-if s2 is an empty string, s1 is returned
-if s2 occurs nowhere in s1, NULL is returned
-if s2 is found, a pointer to the first character of its occurrence is returned
+	
+example of the search algorithm: 
 
-example: 
 haystack (s1): C C C B I A
 			   0 1 2 3 4 5
 needle (s2): B I A 
@@ -42,12 +40,18 @@ char	*ft_strnstr(const char *s1, const char *s2, size_t len)
 	size_t i;
     size_t j;
 
+	// if s2 is an empty string (there's nothing to search), s1 (the whole string) is returned
 	if (*s2 == '\0')
 		return ((char *)s1);
+		
     i = 0;        
+
+	// iterate through s1 until it reaches the length or the null terminator
 	while (i < len && s1[i])
 	{
         j = 0;
+
+		// implementation of the search algorithm
 		while ((i + j) < len && s1[i + j] == s2[j])
         {
 		    j++;
@@ -56,5 +60,7 @@ char	*ft_strnstr(const char *s1, const char *s2, size_t len)
 		}
         i++;
 	}
+	
+	// if s2 occurs nowhere in s1, NULL is returned
 	return (NULL);
 }
