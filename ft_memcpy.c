@@ -6,7 +6,7 @@
 /*   By: bbazagli <bbazagli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/18 13:23:03 by bbazagli          #+#    #+#             */
-/*   Updated: 2023/08/04 10:41:19 by bbazagli         ###   ########.fr       */
+/*   Updated: 2023/08/04 16:06:06 by bbazagli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	return (dest);
 }
 
-/*
+/*	
 printf("%s\n", dest_ptr) - prints string
 printf("%p\n", dest_ptr) - prints address
 */

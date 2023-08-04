@@ -6,7 +6,7 @@
 /*   By: bbazagli <bbazagli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/02 10:11:12 by bbazagli          #+#    #+#             */
-/*   Updated: 2023/08/04 09:42:08 by bbazagli         ###   ########.fr       */
+/*   Updated: 2023/08/04 16:08:13 by bbazagli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ void ft_lstadd_back(t_list **lst, t_list *new)
 }
 
 /* Why we use a pointer to a pointer in the signature of 'ft_lstadd_back' and only a pointer in 'ft_lstlast' ?
-
+    
 1) ft_lstadd_back function is designed to add an element to the end of a linked list. 
 Since C uses "pass-by-value" for function arguments, using a pointer to a pointer (t_list **lst) allows the function to modify the head pointer itself 
 (not just the contents it points to) and make sure that the changes persist outside the function.
