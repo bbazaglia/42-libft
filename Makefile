@@ -6,13 +6,11 @@
 #    By: bbazagli <bbazagli@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/18 10:56:34 by bbazagli          #+#    #+#              #
-#    Updated: 2023/08/03 16:26:20 by bbazagli         ###   ########.fr        #
+#    Updated: 2023/08/04 09:46:25 by bbazagli         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRC = ft_lstadd_front.c \
-	ft_lstnew.c \
-	ft_putnbr_fd.c \
+SRC = ft_putnbr_fd.c \
 	ft_putendl_fd.c \
 	ft_putstr_fd.c \
 	ft_putchar_fd.c \
@@ -105,12 +103,10 @@ OBJ_BONUS = ft_lstnew.o \
 NAME = libft.a
 
 all: $(NAME)
-
-# bonus: 
-# 	gcc -Wall -Wextra -Werror -c $(SRC) $(SRC_BONUS)
-# 	ar rc $(NAME) $(OBJ) $(OBJ_BONUS)
 	
-bonus: 
+bonus: $(OBJ_BONUS)
+
+$(OBJ_BONUS): $(SRC_BONUS)
 	gcc -Wall -Wextra -Werror -c $(SRC_BONUS)
 	ar rc $(NAME) $(OBJ_BONUS)
 
