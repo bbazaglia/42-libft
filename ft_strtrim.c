@@ -6,7 +6,7 @@
 /*   By: bbazagli <bbazagli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/21 12:29:53 by bbazagli          #+#    #+#             */
-/*   Updated: 2023/07/28 10:13:51 by bbazagli         ###   ########.fr       */
+/*   Updated: 2023/08/04 13:45:02 by bbazagli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,15 @@ char	*ft_strtrim(char const *s1, char const *set)
 	size_t	trimlen;
 	char	*trimstr;
 
+	// check if the string is empty
+	if (s1 == NULL || set == NULL)
+		return (NULL);
+		
 	start = 0;
 	end = ft_strlen(s1);
+
+	if (start == end)
+        return (ft_strdup(""));
 	
 	/* check whether the char s1[start] exists in set
 	increment the start index while the char at that position exists in set 

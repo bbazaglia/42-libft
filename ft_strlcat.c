@@ -6,7 +6,7 @@
 /*   By: bbazagli <bbazagli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/19 14:00:21 by bbazagli          #+#    #+#             */
-/*   Updated: 2023/07/19 15:40:21 by bbazagli         ###   ########.fr       */
+/*   Updated: 2023/08/04 11:02:20 by bbazagli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,13 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	size_t	total_len;
 	size_t	i;
 
+	// Handle the case when a null parameter is sent with a size of 0
+	if (dst == NULL) 
+        dst_len = 0;
+	else 
+		dst_len = ft_strlen(dst);
+
 	src_len = ft_strlen(src);
-	dst_len = ft_strlen(dst);
 	total_len = src_len + dst_len;
 	i = 0;
 	if (size > dst_len)

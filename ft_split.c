@@ -6,7 +6,7 @@
 /*   By: bbazagli <bbazagli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/24 12:06:06 by bbazagli          #+#    #+#             */
-/*   Updated: 2023/07/28 09:26:55 by bbazagli         ###   ########.fr       */
+/*   Updated: 2023/08/04 11:14:54 by bbazagli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,10 @@ int	ft_count_words(char const *s, char c)
 {
 	int	i;
 	int	count;
-
+	
 	i = 0;
 	count = 0;
+	
 	// iterates over the string until it reaches the null terminator
 	while (s[i])
 	{
@@ -114,6 +115,9 @@ char	**ft_split(char const *s, char c)
 	char	**arr;
 	size_t	num_words;
 
+	// check if the input string is NULL
+	if (!s)
+		return (NULL);
 	num_words = ft_count_words(s, c);
 	// allocate memory for the 'arr' array
 	arr = (char **)malloc(sizeof(char *) * (num_words + 1));

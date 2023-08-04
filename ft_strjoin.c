@@ -22,6 +22,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	unsigned int	s2len;
 	int				i;
 
+	if (!s1 || !s2)
+		return (NULL);
 	s1len = ft_strlen(s1);
 	s2len = ft_strlen(s2);
 	newlen = s1len + s2len;

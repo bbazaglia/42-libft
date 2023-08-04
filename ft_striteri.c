@@ -6,7 +6,7 @@
 /*   By: bbazagli <bbazagli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/27 09:26:23 by bbazagli          #+#    #+#             */
-/*   Updated: 2023/07/27 09:35:49 by bbazagli         ###   ########.fr       */
+/*   Updated: 2023/08/04 11:12:01 by bbazagli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,9 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
     size_t i;
 
+    if (!s || !f)
+        return ;
+    
     i = 0;
     while(s[i])
     {

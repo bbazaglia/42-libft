@@ -6,7 +6,7 @@
 /*   By: bbazagli <bbazagli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/02 13:10:30 by bbazagli          #+#    #+#             */
-/*   Updated: 2023/08/02 15:34:17 by bbazagli         ###   ########.fr       */
+/*   Updated: 2023/08/03 16:12:15 by bbazagli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,17 +25,14 @@ t_list *ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
     t_list *new_list;
     t_list *new_node;
 
-    // the function doesn't try to iterate through a NULL list or apply a NULL function.
+    // don't try to iterate through a NULL list or apply a NULL function
     if (lst == NULL || f == NULL)
         return (NULL);
         
     // create the first node of the new list
     new_node = ft_lstnew(f(lst->content));
     if (new_node == NULL)
-    {
-        free(new_node);
         return (NULL);
-    }
         
     // save the pointer to the first node of the new list
     new_list = new_node;

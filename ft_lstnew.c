@@ -6,7 +6,7 @@
 /*   By: bbazagli <bbazagli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/02 08:37:39 by bbazagli          #+#    #+#             */
-/*   Updated: 2023/08/02 08:53:59 by bbazagli         ###   ########.fr       */
+/*   Updated: 2023/08/04 10:55:40 by bbazagli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ t_list	*ft_lstnew(void *content)
 {
 	t_list *new;
 	new = malloc(sizeof(t_list));
+	if (new == NULL)
+		return (NULL);
 	new->content = content;
 	new->next = NULL;
 	return (new);
