@@ -6,7 +6,7 @@
 #    By: bbazagli <bbazagli@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/18 10:56:34 by bbazagli          #+#    #+#              #
-#    Updated: 2023/08/04 09:46:25 by bbazagli         ###   ########.fr        #
+#    Updated: 2023/08/04 10:10:03 by bbazagli         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -103,23 +103,24 @@ OBJ_BONUS = ft_lstnew.o \
 NAME = libft.a
 
 all: $(NAME)
-	
+
+$(NAME): $(OBJ)
+	gcc -Wall -Wextra -Werror -c $(SRC) 
+	ar rc $(NAME) $(OBJ)
+
 bonus: $(OBJ_BONUS)
 
 $(OBJ_BONUS): $(SRC_BONUS)
 	gcc -Wall -Wextra -Werror -c $(SRC_BONUS)
 	ar rc $(NAME) $(OBJ_BONUS)
 
-$(NAME): $(OBJ)
-	gcc -Wall -Wextra -Werror -c $(SRC) 
-	ar rc $(NAME) $(OBJ)
-
 clean: 
 	rm -f $(OBJ) $(OBJ_BONUS)
 
 fclean: clean
-	rm -f $(NAME) $(NAME) 
+	rm -f $(NAME)
 
 re: fclean all
 
+# phony targets are not associated with files and will always be considered out-of-date, triggering their associated commands to be executed.
 .PHONY: all clean fclean re bonus
