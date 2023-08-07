@@ -16,10 +16,9 @@ void	*ft_memset(void *str, int c, size_t n)
 	return (str);
 }
 
-
 int	main(void)
 {
-	printf("test # 1\n");
+	printf("test #1\n");
 	char s[12];
 	char *str = memset(s, 'a', 12);
 	printf("%s\n", str);
@@ -34,6 +33,7 @@ int	main(void)
 	src[3] = 'a';
 	ft_memset(&src[3], 'b', 3);
 	printf("%s\n", src);
+	
 	char src1[10];
 	src1[0] = 'a';
 	src1[1] = 'a';
@@ -42,12 +42,27 @@ int	main(void)
 	memset(&src1[3], 'b', 3);
 	printf("%s\n\n", src1);
 
-	// printf("test # 3\n"); // seg fault
-	// char *s1 = "Hello World!";
-	// char *str2 = memset(s1, 'a', 12);
-	// printf("%s\n", str2);
-	// char *str3 = ft_memset(s1, 'a', 12);
-	// printf("%s\n", str3);
+
+	printf("test #3\n");
+	char source[] = "aaaaaaa";
+	ft_memset(&source[3], 'b', 3);
+	int i = 0;
+	while(i < 8)
+	{
+		printf("%c ", source[i]);
+		i++;
+	}
+	printf("\n");
+	char source1[] = "aaaaaaa";
+	memset(&source1[3], 'b', 3);
+	int j = 0;
+	while(j < 8)
+	{
+		printf("%c ", source1[j]);
+		j++;
+	}
+}
+
 
 
 
@@ -68,4 +83,3 @@ int	main(void)
 
 	// printf("memset: %d\n", memset(" ", 'a', 10));
 	// printf("ft_memset: %d\n", ft_memset(" ", 'a', 10));
-}
