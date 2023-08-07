@@ -1,3 +1,5 @@
+// ok
+
 #include <stdio.h>
 #include <string.h>
 
@@ -61,25 +63,39 @@ int	main(void)
 		printf("%c ", source1[j]);
 		j++;
 	}
+	printf("\n\n");
+
+	printf("test #4\n");
+	char w[6];
+	w[0] = 'h';
+	w[1] = 'e';
+	w[2] = 'l';
+	w[3] = 'l';
+	w[4] = 'o';
+	w[5] = '\0';
+
+	ft_memset(&w[1], 'a', 3);
+	int k = 0;
+	while(k < 6)
+	{
+		printf("%c ", w[k]);
+		k++;
+	}
+	printf("\n");
+	
+	char word[6];
+	word[0] = 'h';
+	word[1] = 'e';
+	word[2] = 'l';
+	word[3] = 'l';
+	word[4] = 'o';
+	word[5] = '\0';
+	memset(&word[1], 'a', 3);
+	k = 0;
+	while(k < 6)
+	{
+		printf("%c ", word[k]);
+		k++;
+	}
+	printf("\n");
 }
-
-
-
-
-
-
-
-	// printf("memset: %d\n", memset("Hello World!", 'a', 12));
-	// printf("ft_memset: %d\n", ft_memset("Hello World!", 'a', 12));
-
-	// printf("memset: %d\n", memset("Hello World!", 'a', 0));
-	// printf("ft_memset: %d\n", ft_memset("Hello World!", 'a', 0));
-
-	// printf("memset: %d\n", memset("Hello World!", 'a', 2));
-	// printf("ft_memset: %d\n", ft_memset("Hello World!", 'a', 2));
-
-	// printf("memset: %d\n", memset("", 'a', 2));
-	// printf("ft_memset: %d\n", ft_memset("", 'a', 2));
-
-	// printf("memset: %d\n", memset(" ", 'a', 10));
-	// printf("ft_memset: %d\n", ft_memset(" ", 'a', 10));
