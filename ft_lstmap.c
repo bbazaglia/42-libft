@@ -6,11 +6,11 @@
 /*   By: bbazagli <bbazagli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/02 13:10:30 by bbazagli          #+#    #+#             */
-/*   Updated: 2023/08/08 13:30:28 by bbazagli         ###   ########.fr       */
+/*   Updated: 2023/08/08 13:33:03 by bbazagli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/* This function creates a new linked list by applying a function f to each element of an existing linked list lst
+/* This function creates a new linked list by applying a function f to each element of an existing linked list lst.
 - lst: pointer to the current node in the original list;
 - f: pointer to a function that will be applied to the content of each node in the original list to create the content of the new list;
 - del: pointer to a function that frees the memory of the content in case of an error during the mapping process.
@@ -20,6 +20,49 @@ The ’del’ function is used to delete the content of a node if needed.*/
 
 #include "libft.h"
 
+// version added to fit the 25 lines requirement
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
+{
+	t_list	*new_list;
+	t_list	*new_node;
+
+    // check if either the input list or the transformation function is not valid
+	if (lst == NULL || f == NULL)
+		return (NULL);
+
+    // initialize the pointer to the first node of the new list
+	new_list = NULL;
+    
+	while (lst)
+	{
+        // for each element of the original list, create a new node in the new list
+		new_node = ft_lstnew(f(lst->content));
+
+        // check if the new node creation was successful
+		if (new_node == NULL)
+		{
+            /* if the new list is  also null, no nodes were successfully added to the new list yet, and there is no memory to clean up
+            therefore, it is sufficient to return NULL */
+			if (new_list == NULL)
+				return (NULL);
+            
+            // if the allocation fails but a new list was created, delete the new list and return NULL
+			ft_lstclear(&new_list, del);
+			return (NULL);
+		}
+
+        // if the new node was successfully created, add it to the end of the new list
+		ft_lstadd_back(&new_list, new_node);
+
+        // move to the next node in the original list
+		lst = lst->next;
+	}
+    
+    // return the pointer to the first node of the new list
+	return (new_list);
+} 
+
+// old version: 25+ lines
 t_list *ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
     t_list *new_list;
@@ -72,45 +115,3 @@ t_list *ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
     // return the pointer to the first node of the new list
     return (new_list);
 }
-
-// version added to fit the 25 lines requirement
-t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
-{
-	t_list	*new_list;
-	t_list	*new_node;
-
-    // check if either the input list or the transformation function is not valid
-	if (lst == NULL || f == NULL)
-		return (NULL);
-
-    // initialize the pointer to the first node of the new list
-	new_list = NULL;
-    
-	while (lst)
-	{
-        // for each element of the original list, create a new node in the new list
-		new_node = ft_lstnew(f(lst->content));
-
-        // check if the new node creation was successful
-		if (new_node == NULL)
-		{
-            /* if the new list is  also null, no nodes were successfully added to the new list yet, and there is no memory to clean up
-            therefore, it is sufficient to return NULL */
-			if (new_list == NULL)
-				return (NULL);
-            
-            // if the allocation fails but a new list was created, delete the new list and return NULL
-			ft_lstclear(&new_list, del);
-			return (NULL);
-		}
-
-        // if the new node was successfully created, add it to the end of the new list
-		ft_lstadd_back(&new_list, new_node);
-
-        // move to the next node in the original list
-		lst = lst->next;
-	}
-    
-    // return the pointer to the first node of the new list
-	return (new_list);
-} 
