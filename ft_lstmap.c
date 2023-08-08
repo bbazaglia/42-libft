@@ -6,7 +6,7 @@
 /*   By: bbazagli <bbazagli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/02 13:10:30 by bbazagli          #+#    #+#             */
-/*   Updated: 2023/08/08 16:50:44 by bbazagli         ###   ########.fr       */
+/*   Updated: 2023/08/08 16:53:18 by bbazagli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -120,6 +120,7 @@ t_list *ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 
 
 // pedro's version (old version adapted to fit the 25 lines requirement)
+
 /*
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
