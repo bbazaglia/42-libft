@@ -6,7 +6,7 @@
 /*   By: bbazagli <bbazagli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/02 13:10:30 by bbazagli          #+#    #+#             */
-/*   Updated: 2023/08/08 13:33:03 by bbazagli         ###   ########.fr       */
+/*   Updated: 2023/08/08 16:50:44 by bbazagli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ The ’del’ function is used to delete the content of a node if needed.*/
 
 #include "libft.h"
 
-// version added to fit the 25 lines requirement
+// new version (25 lines)
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
 	t_list	*new_list;
@@ -62,6 +62,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	return (new_list);
 } 
 
+/*
 // old version: 25+ lines
 t_list *ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
@@ -103,8 +104,8 @@ t_list *ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
         lst = lst->next;
     }
 
-    /* the last node of the original list won't be processed, because it points to NULL:
-    add an additional step to create the last node of the new list after the loop*/
+    // the last node of the original list won't be processed, because it points to NULL:
+    // add an additional step to create the last node of the new list after the loop
     new_node->next = ft_lstnew(f(lst->content));
     if (new_node->next == NULL)
     {
@@ -115,3 +116,37 @@ t_list *ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
     // return the pointer to the first node of the new list
     return (new_list);
 }
+*/
+
+
+// pedro's version (old version adapted to fit the 25 lines requirement)
+/*
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
+{
+	t_list	*new_lst;
+	t_list	*new_elem;
+
+	if (lst == NULL)
+		return (NULL);
+	new_elem = ft_lstnew(f(lst->content));
+	if (new_elem == NULL)
+	{
+		free(new_elem);
+		return (NULL);
+	}
+	new_lst = new_elem;
+	lst = lst->next;
+	while (lst != NULL)
+	{
+		new_elem->next = ft_lstnew(f(lst->content));
+		if (new_elem == NULL)
+		{
+			ft_lstclear(&new_lst, del);
+			return (NULL);
+		}
+		new_elem = new_elem->next;
+		lst = lst->next;
+	}
+	return (new_lst);
+}
+*\
