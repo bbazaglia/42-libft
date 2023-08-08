@@ -6,7 +6,7 @@
 /*   By: bbazagli <bbazagli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/02 13:10:30 by bbazagli          #+#    #+#             */
-/*   Updated: 2023/08/08 12:49:03 by bbazagli         ###   ########.fr       */
+/*   Updated: 2023/08/08 13:30:28 by bbazagli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,26 +74,43 @@ t_list *ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 }
 
 // version added to fit the 25 lines requirement
-/* t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
 	t_list	*new_list;
 	t_list	*new_node;
 
+    // check if either the input list or the transformation function is not valid
 	if (lst == NULL || f == NULL)
 		return (NULL);
+
+    // initialize the pointer to the first node of the new list
 	new_list = NULL;
+    
 	while (lst)
 	{
+        // for each element of the original list, create a new node in the new list
 		new_node = ft_lstnew(f(lst->content));
+
+        // check if the new node creation was successful
 		if (new_node == NULL)
 		{
+            /* if the new list is  also null, no nodes were successfully added to the new list yet, and there is no memory to clean up
+            therefore, it is sufficient to return NULL */
 			if (new_list == NULL)
 				return (NULL);
+            
+            // if the allocation fails but a new list was created, delete the new list and return NULL
 			ft_lstclear(&new_list, del);
 			return (NULL);
 		}
+
+        // if the new node was successfully created, add it to the end of the new list
 		ft_lstadd_back(&new_list, new_node);
+
+        // move to the next node in the original list
 		lst = lst->next;
 	}
+    
+    // return the pointer to the first node of the new list
 	return (new_list);
-} *\
+} 
