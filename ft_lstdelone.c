@@ -6,7 +6,7 @@
 /*   By: bbazagli <bbazagli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/02 10:53:51 by bbazagli          #+#    #+#             */
-/*   Updated: 2023/08/02 13:02:56 by bbazagli         ###   ########.fr       */
+/*   Updated: 2023/08/08 13:43:53 by bbazagli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,14 @@ del: a pointer to a function that will be used to delete the content of the node
 
 void ft_lstdelone(t_list *lst, void (*del)(void*))
 {
+    // check whether either the input node pointer or the delete function is null
     if (lst == NULL || del == NULL)
         return ;
+    
+    // delete the content of the node
     del(lst->content);
+
+    // free the memory associated with the node structure itself 
     free(lst);
 }
 
