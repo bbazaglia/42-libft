@@ -6,7 +6,7 @@
 /*   By: bbazagli <bbazagli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/02 13:10:30 by bbazagli          #+#    #+#             */
-/*   Updated: 2023/08/08 16:53:18 by bbazagli         ###   ########.fr       */
+/*   Updated: 2023/08/09 09:12:16 by bbazagli         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -131,10 +131,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 		return (NULL);
 	new_elem = ft_lstnew(f(lst->content));
 	if (new_elem == NULL)
-	{
-		free(new_elem);
 		return (NULL);
-	}
 	new_lst = new_elem;
 	lst = lst->next;
 	while (lst != NULL)
@@ -150,4 +147,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	}
 	return (new_lst);
 }
-*\
+*\ Note: the main difference between my version +25 lines vs. pedro's version.
+In my version the last node of the original list is processed outside the loop 'while (lst->next != NULL)'.
+In pedro's version the last node is processed inside the loop 'while (lst != NULL)'.
+/* 
